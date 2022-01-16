@@ -5,27 +5,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E1B0FF"
+    android:background="@color/white"
     tools:context=".SplashScreenActivity">
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/sudoku_logo"/>
+        android:src="@drawable/sudoku_logo" />
 
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SUDOKU GAME"
         android:layout_below="@+id/logo"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:textColor="@color/white"
         android:fontFamily="sans-serif-medium"
-        android:textSize="18sp"/>
+        android:text="SUDOKU GAME"
+        android:textColor="#5CB6FD"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 
     <ProgressBar

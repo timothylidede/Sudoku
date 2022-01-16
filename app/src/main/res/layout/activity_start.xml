@@ -5,13 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E1B0FF"
+    android:background="@color/white"
     tools:context=".SplashScreenActivity">
 
   <ImageView
       android:id="@+id/logo"
-      android:layout_width="100dp"
-      android:layout_height="100dp"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
       android:layout_centerInParent="true"
       android:src="@drawable/sudoku_logo"/>
 
@@ -19,13 +19,13 @@
       android:id="@+id/text"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="SUDOKU GAME"
       android:layout_below="@+id/logo"
       android:layout_centerHorizontal="true"
-      android:textStyle="bold"
-      android:textColor="@color/white"
       android:fontFamily="sans-serif-medium"
-      android:textSize="18sp"/>
+      android:text="SUDOKU GAME"
+      android:textColor="#5CB6FD"
+      android:textSize="18sp"
+      android:textStyle="bold" />
 
 
   <androidx.cardview.widget.CardView
@@ -35,7 +35,7 @@
       android:layout_alignParentBottom="true"
       android:layout_centerHorizontal="true"
       android:layout_marginBottom="100dp"
-      android:backgroundTint="@color/white"
+      android:backgroundTint="#5CB6FD"
       app:cardCornerRadius="10dp">
 
     <RelativeLayout
@@ -45,12 +45,12 @@
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="Start"
           android:layout_centerInParent="true"
-          android:textStyle="bold"
           android:fontFamily="sans-serif-medium"
+          android:text="Start"
+          android:textColor="@color/white"
           android:textSize="15dp"
-          android:textColor="@color/black"/>
+          android:textStyle="bold" />
 
     </RelativeLayout>
 
