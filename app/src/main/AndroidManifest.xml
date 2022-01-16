@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sudoku">
         <activity
+            android:name=".SplashScreenActivity"
+            android:exported="false" />
+        <activity
             android:name=".PlaySudokuActivity"
             android:exported="true">
             <intent-filter>
