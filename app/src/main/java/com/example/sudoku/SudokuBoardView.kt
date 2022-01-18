@@ -18,6 +18,8 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        val sizePixels = Math.min(widthMeasureSpec, heightMeasureSpec)
+        setMeasuredDimension(sizePixels, sizePixels)
     }
 
     override fun onDraw(canvas: Canvas){
