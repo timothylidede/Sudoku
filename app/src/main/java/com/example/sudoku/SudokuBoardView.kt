@@ -10,6 +10,9 @@ import android.view.View
 class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     View(context, attributeSet) {
 
+    private var sqrtSize = 3
+    private var size = 9
+
     private val thickLinePaint = Paint().apply {
         style = Paint.Style.STROKE
         color = Color.BLACK
