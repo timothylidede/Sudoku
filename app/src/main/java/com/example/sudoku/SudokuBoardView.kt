@@ -30,13 +30,16 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     override fun onDraw(canvas: Canvas){
         cellSizePixels = (width/size).toFloat()
 
+        drawLines(canvas)
+    }
+
+    private fun drawLines(canvas: Canvas){
+
         canvas.drawRect(0F, 0F, width.toFloat(), height.toFloat(),
             thickLinePaint)
 
-        drawLine(canvas)
-    }
-
-    private fun drawLine(canvas: Canvas){
-        
+        for(i in 1 until size){
+            
+        }
     }
 }
