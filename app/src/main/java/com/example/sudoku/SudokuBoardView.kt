@@ -46,10 +46,9 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
 
         for(i in 1 until size){
             val paintToUse = when(i % sqrtSize){
-                
+                0 -> thickLinePaint
+                else -> thinLinePaint
             }
-
-            i % sqrtSize == 0
         }
     }
 }
