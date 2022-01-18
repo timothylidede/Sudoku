@@ -33,6 +33,10 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
         canvas.drawRect(0F, 0F, width.toFloat(), height.toFloat(),
             thickLinePaint)
 
-        drwLine(canvas)
+        drawLine(canvas)
+    }
+
+    private fun drawLine(canvas: Canvas){
+        
     }
 }
