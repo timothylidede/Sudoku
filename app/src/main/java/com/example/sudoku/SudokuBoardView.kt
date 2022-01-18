@@ -16,6 +16,10 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
         strokeWidth = 4F
     }
 
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+    }
+
     override fun onDraw(canvas: Canvas){
         canvas.drawRect(0F, 0F, width.toFloat(), height.toFloat(),
             thickLinePaint)
