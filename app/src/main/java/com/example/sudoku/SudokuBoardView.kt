@@ -13,6 +13,8 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     private var sqrtSize = 3
     private var size = 9
 
+    private var cellSizePixels = 4F
+
     private val thickLinePaint = Paint().apply {
         style = Paint.Style.STROKE
         color = Color.BLACK
