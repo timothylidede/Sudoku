@@ -21,6 +21,12 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
         strokeWidth = 4F
     }
 
+    private val thinLinePaint = Paint().apply {
+        style = Paint.Style.STROKE
+        color = Color.BLACK
+        strokeWidth = 2F
+    }
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         val sizePixels = Math.min(widthMeasureSpec, heightMeasureSpec)
@@ -39,7 +45,7 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
             thickLinePaint)
 
         for(i in 1 until size){
-            
+
         }
     }
 }
