@@ -30,6 +30,16 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
         strokeWidth = 2F
     }
 
+    private val selectedCellPaint = Paint().apply {
+        style = Paint.Style.FILL_AND_STROKE
+        color = Color.parseColor("#6ead3a")
+    }
+
+    private val conflictingCellPaint = Paint().apply {
+        style = Paint.Style.FILL_AND_STROKE
+        color = Color.parseColor("#efedef")
+    }
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         val sizePixels = Math.min(widthMeasureSpec, heightMeasureSpec)
@@ -44,7 +54,11 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     }
 
     private fun fillCells(canvas: Canvas) {
+        for(r in 0..size){
+            for(c in 0..size){
 
+            }
+        }
     }
 
     private fun drawLines(canvas: Canvas){
