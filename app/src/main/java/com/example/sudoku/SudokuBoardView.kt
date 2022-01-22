@@ -117,4 +117,8 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
             else -> false
         }
     }
+
+    private fun handleTouchEvent(x: Float, y: Float) {
+
+    }
 }
