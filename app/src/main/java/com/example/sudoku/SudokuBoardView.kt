@@ -109,6 +109,12 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        
+        return when (event.action){
+            MotionEvent.ACTION_DOWN -> {
+                handleTouchEvent(event.x, event.y)
+                true
+            }
+            else -> false
+        }
     }
 }
