@@ -68,6 +68,10 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
         }
     }
 
+    private fun fillCell(canvas: Canvas, r: Int, c: Int, paint: Paint) {
+        
+    }
+
     private fun drawLines(canvas: Canvas){
 
         canvas.drawRect(0F, 0F, width.toFloat(), height.toFloat(),
