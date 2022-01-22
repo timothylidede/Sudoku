@@ -50,11 +50,21 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
                 else -> thinLinePaint
             }
 
-            canvas.drawLine(i * cellSizePixels,
+            canvas.drawLine(
+                i * cellSizePixels,
                 0F,
-            i * cellSizePixels,
-            height.toFloat(),
-            paintToUse)
+                i * cellSizePixels,
+                height.toFloat(),
+                paintToUse
+            )
+
+            canvas.drawLine(
+                0F,
+                i * cellSizePixels,
+                width.toFloat(),
+                i * cellSizePixels,
+                paintToUse
+            )
         }
     }
 }
