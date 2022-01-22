@@ -119,6 +119,8 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     }
 
     private fun handleTouchEvent(x: Float, y: Float) {
-
+        selectedRow = (y / cellSizePixels).toInt()
+        selectedCol = (x / cellSizePixels).toInt()
+        invalidate()
     }
 }
