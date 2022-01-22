@@ -54,9 +54,16 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     }
 
     private fun fillCells(canvas: Canvas) {
+        if(selectedRow == -1 || selectedCol == -1) return
         for(r in 0..size){
             for(c in 0..size){
-
+                if(r == selectedRow && c == selectedCol){
+                    fillCell(canvas, r, c, selectedCellPaint)
+                }else if(r == selectedRow || c == selectedCol){
+                    fillCell(canvas, r, c, conflictingCellPaint)
+                }else if(r / sqrtSize == selectedRow / sqrtSize && c / sqrtSize == selectedCol / sqrtSize){
+                    fillCell(canvas, r, c, conflictingCellPaint)
+                }
             }
         }
     }
