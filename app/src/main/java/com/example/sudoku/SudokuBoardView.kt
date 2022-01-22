@@ -15,6 +15,9 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
 
     private var cellSizePixels = 0F
 
+    private var selectedRow = -1
+    private var selectedCol = -1
+
     private val thickLinePaint = Paint().apply {
         style = Paint.Style.STROKE
         color = Color.BLACK
@@ -36,7 +39,12 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     override fun onDraw(canvas: Canvas){
         cellSizePixels = (width/size).toFloat()
 
+        fillCells(canvas)
         drawLines(canvas)
+    }
+
+    private fun fillCells(canvas: Canvas) {
+
     }
 
     private fun drawLines(canvas: Canvas){
