@@ -123,4 +123,10 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
         selectedCol = (x / cellSizePixels).toInt()
         invalidate()
     }
+
+    fun updateSelectedCellUI(row: Int, col: Int) {
+        selectedRow = row
+        selectedCol = col
+        invalidate()
+    }
 }
