@@ -25,6 +25,10 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
         fun onCellTouched(row:Int, col: Int)
     }
 
+    fun registerListener(listener: SudokuBoardView.OnTouchListener){
+        this.listener = listener
+    }
+
     private val thickLinePaint = Paint().apply {
         style = Paint.Style.STROKE
         color = Color.BLACK
