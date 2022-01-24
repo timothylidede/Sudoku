@@ -14,6 +14,8 @@ class SudokuGame {
     }
 
     fun updateSelectedCell(row: Int, col: Int){
-        
+        selectedRow = row
+        selectedCol = col
+        selectedCellLiveData.postValue(Pair(row, col))
     }
 }
