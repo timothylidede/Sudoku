@@ -129,4 +129,8 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
         selectedCol = col
         invalidate()
     }
+
+    interface onTouchListener{
+
+    }
 }
