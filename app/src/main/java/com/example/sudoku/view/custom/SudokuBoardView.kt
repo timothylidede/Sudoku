@@ -16,8 +16,14 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
 
     private var cellSizePixels = 0F
 
-    private var selectedRow = -1
-    private var selectedCol = -1
+    private var selectedRow = 0
+    private var selectedCol = 0
+
+    private var listener: SudokuBoardView.OnTouchListener? = null
+
+    interface OnTouchListener {
+        fun onCellTouched(row:Int, col: Int)
+    }
 
     private val thickLinePaint = Paint().apply {
         style = Paint.Style.STROKE
@@ -128,9 +134,5 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
         selectedRow = row
         selectedCol = col
         invalidate()
-    }
-
-    interface onTouchListener{
-
     }
 }
