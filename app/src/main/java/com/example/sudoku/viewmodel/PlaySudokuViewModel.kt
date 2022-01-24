@@ -1,4 +1,7 @@
 package com.example.sudoku.viewmodel
 
-class PlaySudokuViewModel {
+import androidx.lifecycle.ViewModel
+
+class PlaySudokuViewModel: ViewModel() {
+
 }
