@@ -131,7 +131,7 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     private fun handleTouchEvent(x: Float, y: Float) {
         val possibleSelectedRow = (y / cellSizePixels).toInt()
         val possibleSelectedCol = (x / cellSizePixels).toInt()
-        listener.onCellTouched(possibleSelectedRow, possibleSelectedCol)
+        listener?.onCellTouched(possibleSelectedRow, possibleSelectedCol)
     }
 
     fun updateSelectedCellUI(row: Int, col: Int) {
