@@ -14,7 +14,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false" />
         <activity
-            android:name=".PlaySudokuActivity"
+            android:name=".view.PlaySudokuActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false" />
         <activity

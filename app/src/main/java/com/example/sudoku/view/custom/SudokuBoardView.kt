@@ -1,4 +1,4 @@
-package com.example.sudoku
+package com.example.sudoku.view.custom
 
 import android.content.Context
 import android.graphics.Canvas
