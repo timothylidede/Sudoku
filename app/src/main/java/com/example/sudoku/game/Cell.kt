@@ -1,4 +1,4 @@
 package com.example.sudoku.game
 
-class Cell(row: Int, col: Int, value: Int) {
+class Cell(val row: Int, val col: Int, var value: Int) {
 }
