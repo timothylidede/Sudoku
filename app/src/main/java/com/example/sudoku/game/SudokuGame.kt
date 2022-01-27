@@ -13,6 +13,7 @@ class SudokuGame {
 
     init {
         val cells = List(9 * 9){i -> Cell(i / 9 , i % 9, i % 9)}
+        board = Board(9, cells)
 
         selectedCellLiveData.postValue(Pair(selectedRow, selectedCol))
     }
