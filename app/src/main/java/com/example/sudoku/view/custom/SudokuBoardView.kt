@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
@@ -54,6 +55,12 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
         color = Color.parseColor("#efedef")
     }
 
+    private val textPaint = Paint().apply {
+        style = Paint.Style.FILL_AND_STROKE
+        color = Color.BLACK
+        textSize = 24F
+    }
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         val sizePixels = Math.min(widthMeasureSpec, heightMeasureSpec)
@@ -65,6 +72,15 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
 
         fillCells(canvas)
         drawLines(canvas)
+        drawText(canvas)
+    }
+
+    private fun drawText(canvas: Canvas) {
+        cells?.forEach {
+            val valueString = it.value.toString()
+
+            val textBounds = Rect()
+        }
     }
 
     private fun fillCells(canvas: Canvas) {
