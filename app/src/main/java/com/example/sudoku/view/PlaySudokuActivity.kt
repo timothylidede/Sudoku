@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.sudoku.R
+import com.example.sudoku.game.Cell
 import com.example.sudoku.view.custom.SudokuBoardView
 import com.example.sudoku.viewmodel.PlaySudokuViewModel
 import kotlinx.android.synthetic.main.activity_play_sudoku.*
@@ -25,6 +26,11 @@ class PlaySudokuActivity : AppCompatActivity(), SudokuBoardView.OnTouchListener 
         viewModel.sudokuGame.selectedCellLiveData.observe(this, Observer { 
             updateSelectedCellUI(it)
         })
+        viewModel.sudokuGame.cellsLiveData.observe(this, Observer { updateCells(it) })
+    }
+
+    private fun updateCells(cells: List<Cell>?) = cells?.let {
+        sudokuBoardView.updateCells(cells)
     }
 
     private fun updateSelectedCellUI(cell: Pair<Int, Int>?) = cell?.let{
