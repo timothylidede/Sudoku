@@ -69,8 +69,8 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
 
     private fun fillCells(canvas: Canvas) {
         cells?.forEach {
-            val row = it.row
-            val col = it.col
+            val r = it.row
+            val c = it.col
 
             if(r == selectedRow && c == selectedCol){
                 fillCell(canvas, r, c, selectedCellPaint)
