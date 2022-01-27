@@ -7,6 +7,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import com.example.sudoku.game.Cell
 
 class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     View(context, attributeSet) {
@@ -137,6 +138,11 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     fun updateSelectedCellUI(row: Int, col: Int) {
         selectedRow = row
         selectedCol = col
+        invalidate()
+    }
+
+    fun updateCells(cells: List<Cell>){
+        this.cells = cells
         invalidate()
     }
 }
