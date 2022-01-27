@@ -20,6 +20,8 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     private var selectedRow = 0
     private var selectedCol = 0
 
+    private var cells: List<Cell>? = null
+
     private var listener: SudokuBoardView.OnTouchListener? = null
 
     interface OnTouchListener {
@@ -66,16 +68,16 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     }
 
     private fun fillCells(canvas: Canvas) {
-        if(selectedRow == -1 || selectedCol == -1) return
-        for(r in 0..size){
-            for(c in 0..size){
-                if(r == selectedRow && c == selectedCol){
-                    fillCell(canvas, r, c, selectedCellPaint)
-                }else if(r == selectedRow || c == selectedCol){
-                    fillCell(canvas, r, c, conflictingCellPaint)
-                }else if(r / sqrtSize == selectedRow / sqrtSize && c / sqrtSize == selectedCol / sqrtSize){
-                    fillCell(canvas, r, c, conflictingCellPaint)
-                }
+        cells?.forEach {
+            val row = it.row
+            val col = it.col
+
+            if(r == selectedRow && c == selectedCol){
+                fillCell(canvas, r, c, selectedCellPaint)
+            }else if(r == selectedRow || c == selectedCol){
+                fillCell(canvas, r, c, conflictingCellPaint)
+            }else if(r / sqrtSize == selectedRow / sqrtSize && c / sqrtSize == selectedCol / sqrtSize){
+                fillCell(canvas, r, c, conflictingCellPaint)
             }
         }
     }
