@@ -77,6 +77,9 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
 
     private fun drawText(canvas: Canvas) {
         cells?.forEach {
+            val row = it.row
+            val col = it.col
+
             val valueString = it.value.toString()
 
             val textBounds = Rect()
@@ -84,7 +87,12 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
             val textWidth = textPaint.measureText(valueString)
             val textHeight = textBounds.height()
 
-            canvas.drawText(valueString, (col * cellSizePixels) + cellSizePixels / 2 - textWidth / 2)
+            canvas.drawText(
+                valueString,
+                (col * cellSizePixels) + cellSizePixels / 2 - textWidth / 2,
+                (row * cellSizePixels) + cellSizePixels / 2 - textHeight / 2,
+                textPaint
+            )
         }
     }
 
