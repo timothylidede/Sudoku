@@ -81,6 +81,10 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
 
             val textBounds = Rect()
             textPaint.getTextBounds(valueString, 0, valueString.length, textBounds)
+            val textWidth = textPaint.measureText(valueString)
+            val textHeight = textBounds.height()
+
+            canvas.drawText(valueString, (col * cellSizePixels) + cellSizePixels / 2 - textWidth / 2)
         }
     }
 
