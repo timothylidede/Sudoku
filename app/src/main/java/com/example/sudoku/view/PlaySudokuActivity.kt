@@ -14,6 +14,17 @@ import kotlinx.android.synthetic.main.activity_play_sudoku.*
 class PlaySudokuActivity : AppCompatActivity(), SudokuBoardView.OnTouchListener {
 
     private lateinit var viewModel: PlaySudokuViewModel
+    private val buttons = listOf(
+        oneButton,
+        twoButton,
+        threeButton,
+        fourButton,
+        fiveButton,
+        sixButton,
+        sevenButton,
+        eightButton,
+        nineButton
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +38,12 @@ class PlaySudokuActivity : AppCompatActivity(), SudokuBoardView.OnTouchListener 
             updateSelectedCellUI(it)
         })
         viewModel.sudokuGame.cellsLiveData.observe(this, Observer { updateCells(it) })
+
+        buttons.forEachIndexed{ index, button ->
+            button.setOnClickListener {
+                viewModel.sudokuGame.handleInput(index + 1)
+            }
+        }
     }
 
     private fun updateCells(cells: List<Cell>?) = cells?.let {
