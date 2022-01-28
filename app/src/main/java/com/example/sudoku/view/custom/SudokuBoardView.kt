@@ -80,6 +80,7 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
             val valueString = it.value.toString()
 
             val textBounds = Rect()
+            textPaint.getTextBounds(valueString, 0, valueString.length, textBounds)
         }
     }
 
