@@ -17,6 +17,7 @@ class SudokuGame {
         board = Board(9, cells)
 
         selectedCellLiveData.postValue(Pair(selectedRow, selectedCol))
+        cellsLiveData.postValue(board.cells)
     }
 
     fun handleInput(number: Int){
