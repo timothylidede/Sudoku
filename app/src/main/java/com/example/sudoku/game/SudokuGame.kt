@@ -21,7 +21,7 @@ class SudokuGame {
     }
 
     fun handleInput(number: Int){
-        if(selectedRow == -1 || selectedCol != -1) return
+        if(selectedRow == -1 || selectedCol == -1) return
 
         board.getCell(selectedRow, selectedCol).value = number
         cellsLiveData.postValue(board.cells)
