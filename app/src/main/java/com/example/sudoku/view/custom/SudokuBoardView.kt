@@ -1,10 +1,7 @@
 package com.example.sudoku.view.custom
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.Rect
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
@@ -59,6 +56,13 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
         style = Paint.Style.FILL_AND_STROKE
         color = Color.BLACK
         textSize = 24F
+    }
+
+    private val startingCellTextPaint = Paint().apply {
+        style = Paint.Style.FILL_AND_STROKE
+        color = Color.BLACK
+        textSize = 32F
+        typeface = Typeface.DEFAULT_BOLD
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
