@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import com.example.sudoku.game.Cell
+import kotlin.math.min
 
 class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
     View(context, attributeSet) {
@@ -72,7 +73,7 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-        val sizePixels = Math.min(widthMeasureSpec, heightMeasureSpec)
+        val sizePixels = min(widthMeasureSpec, heightMeasureSpec)
         setMeasuredDimension(sizePixels, sizePixels)
     }
 
@@ -110,7 +111,9 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
             val r = it.row
             val c = it.col
 
-            if(r == selectedRow && c == selectedCol){
+            if(it.isStartingCell){
+                fillCell(canvas, r, c, selectedCellPaint)
+            }else if(r == selectedRow && c == selectedCol){
                 fillCell(canvas, r, c, selectedCellPaint)
             }else if(r == selectedRow || c == selectedCol){
                 fillCell(canvas, r, c, conflictingCellPaint)
