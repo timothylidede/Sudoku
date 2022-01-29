@@ -92,6 +92,7 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
 
             val valueString = it.value.toString()
 
+            val paintToUse = if(it.isStartingCell) startingCellTextPaint else textPaint
             val textBounds = Rect()
             textPaint.getTextBounds(valueString, 0, valueString.length, textBounds)
             val textWidth = textPaint.measureText(valueString)
@@ -112,7 +113,7 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
             val c = it.col
 
             if(it.isStartingCell){
-                fillCell(canvas, r, c, selectedCellPaint)
+                fillCell(canvas, r, c, startingCellPaint)
             }else if(r == selectedRow && c == selectedCol){
                 fillCell(canvas, r, c, selectedCellPaint)
             }else if(r == selectedRow || c == selectedCol){
