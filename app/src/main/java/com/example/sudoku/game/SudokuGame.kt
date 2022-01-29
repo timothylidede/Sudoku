@@ -14,6 +14,8 @@ class SudokuGame {
 
     init {
         val cells = List(9 * 9){i -> Cell(i / 9 , i % 9, i % 9)}
+        cells[11].isStartingCell = true
+        cells[21].isStartingCell = true
         board = Board(9, cells)
 
         selectedCellLiveData.postValue(Pair(selectedRow, selectedCol))
