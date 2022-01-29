@@ -65,6 +65,11 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
         typeface = Typeface.DEFAULT_BOLD
     }
 
+    private val startingCellPaint = Paint().apply {
+        style = Paint.Style.FILL_AND_STROKE
+        color = Color.parseColor("#acacac")
+    }
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         val sizePixels = Math.min(widthMeasureSpec, heightMeasureSpec)
