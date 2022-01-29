@@ -102,7 +102,7 @@ class SudokuBoardView(context: Context, attributeSet: AttributeSet) :
                 valueString,
                 (col * cellSizePixels) + cellSizePixels / 2 - textWidth / 2,
                 (row * cellSizePixels) + cellSizePixels / 2 - textHeight / 2,
-                textPaint
+                paintToUse
             )
         }
     }

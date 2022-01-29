@@ -28,8 +28,10 @@ class SudokuGame {
     }
 
     fun updateSelectedCell(row: Int, col: Int){
-        selectedRow = row
-        selectedCol = col
-        selectedCellLiveData.postValue(Pair(row, col))
+        if(!board.getCell(row, col).isStartingCell) {
+            selectedRow = row
+            selectedCol = col
+            selectedCellLiveData.postValue(Pair(row, col))
+        }
     }
 }
