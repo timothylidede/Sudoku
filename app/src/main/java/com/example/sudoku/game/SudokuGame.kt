@@ -6,6 +6,7 @@ class SudokuGame {
 
     var selectedCellLiveData = MutableLiveData<Pair<Int, Int>>()
     var cellsLiveData = MutableLiveData<List<Cell>>()
+    val isTakingNotesLiveData = MutableLiveData<Boolean>()
 
     private var selectedRow = -1
     private var selectedCol = -1
