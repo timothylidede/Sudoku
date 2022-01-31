@@ -32,7 +32,11 @@ class SudokuGame {
         if(cell.isStartingCell) return
 
         if(isTakingNotes){
-
+            if(cell.notes.contains(number)){
+                cell.notes.remove(number)
+            }else{
+                cell.notes.add(number)
+            }
         }else {
             cell.value = number
             cellsLiveData.postValue(board.cells)
