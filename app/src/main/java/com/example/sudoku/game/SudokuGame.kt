@@ -28,10 +28,15 @@ class SudokuGame {
 
     fun handleInput(number: Int){
         if(selectedRow == -1 || selectedCol == -1) return
-        if(board.getCell(selectedRow, selectedCol).isStartingCell) return
+        var cell = board.getCell(selectedRow, selectedCol)
+        if(cell.isStartingCell) return
 
-        board.getCell(selectedRow, selectedCol).value = number
-        cellsLiveData.postValue(board.cells)
+        if(isTakingNotes){
+
+        }else {
+            cell.value = number
+            cellsLiveData.postValue(board.cells)
+        }
     }
 
     fun updateSelectedCell(row: Int, col: Int){
