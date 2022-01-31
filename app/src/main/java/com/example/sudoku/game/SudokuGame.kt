@@ -37,10 +37,11 @@ class SudokuGame {
             }else{
                 cell.notes.add(number)
             }
+            highlightedKeysLiveData.postValue(cell.notes)
         }else {
             cell.value = number
-            cellsLiveData.postValue(board.cells)
         }
+        cellsLiveData.postValue(board.cells)
     }
 
     fun updateSelectedCell(row: Int, col: Int){
