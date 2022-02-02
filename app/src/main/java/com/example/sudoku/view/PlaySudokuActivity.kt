@@ -45,6 +45,10 @@ class PlaySudokuActivity : AppCompatActivity(), SudokuBoardView.OnTouchListener 
                 viewModel.sudokuGame.handleInput(index + 1)
             }
         }
+
+        notesButton.setOnClickListener{
+            viewModel.sudokuGame.changeNoteTakingState()
+        }
     }
 
     private fun updateCells(cells: List<Cell>?) = cells?.let {
