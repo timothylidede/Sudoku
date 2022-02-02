@@ -56,4 +56,8 @@ class SudokuGame {
             highlightedKeysLiveData.postValue(cell.notes)
         }
     }
+
+    fun changeNoteTakingState(){
+        
+    }
 }
