@@ -60,5 +60,11 @@ class SudokuGame {
     fun changeNoteTakingState(){
         isTakingNotes = !isTakingNotes
         isTakingNotesLiveData.postValue(isTakingNotes)
+
+        val curNotes = if (isTakingNotes){
+            board.getCell(selectedRow, selectedCol).notes
+        }else{
+            setOf<Int>()
+        }
     }
 }
