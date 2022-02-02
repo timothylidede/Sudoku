@@ -27,6 +27,12 @@ class PlaySudokuActivity : AppCompatActivity(), SudokuBoardView.OnTouchListener 
             updateSelectedCellUI(it)
         })
         viewModel.sudokuGame.cellsLiveData.observe(this, Observer { updateCells(it) })
+        viewModel.sudokuGame.isTakingNotesLiveData.observe(this, Observer {
+            updateNoteTakingUI(it)
+        })
+        viewModel.sudokuGame.highlightedKeysLiveData.observe(this, Observer {
+            updateHighlightedKeys(it)
+        })
 
         val buttons = listOf(
             oneButton,
@@ -49,6 +55,10 @@ class PlaySudokuActivity : AppCompatActivity(), SudokuBoardView.OnTouchListener 
         notesButton.setOnClickListener{
             viewModel.sudokuGame.changeNoteTakingState()
         }
+    }
+
+    private fun updateNoteTakingUI(it: Boolean?) {
+
     }
 
     private fun updateCells(cells: List<Cell>?) = cells?.let {
