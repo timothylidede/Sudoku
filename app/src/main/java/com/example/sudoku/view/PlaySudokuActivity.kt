@@ -61,8 +61,12 @@ class PlaySudokuActivity : AppCompatActivity(), SudokuBoardView.OnTouchListener 
 
     }
 
-    private fun updateNoteTakingUI(it: Boolean?) {
-
+    private fun updateNoteTakingUI(isNoteTaking: Boolean?) = isNoteTaking?.let {
+        if (it) {
+            notesButton.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
+        } else {
+            notesButton.setBackgroundColor(Color.LTGRAY)
+        }
     }
 
     private fun updateCells(cells: List<Cell>?) = cells?.let {
