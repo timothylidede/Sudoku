@@ -57,6 +57,10 @@ class PlaySudokuActivity : AppCompatActivity(), SudokuBoardView.OnTouchListener 
         }
     }
 
+    private fun updateHighlightedKeys(it: Set<Int>?) {
+
+    }
+
     private fun updateNoteTakingUI(it: Boolean?) {
 
     }
