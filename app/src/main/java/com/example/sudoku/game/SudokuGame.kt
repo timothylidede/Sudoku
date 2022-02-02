@@ -58,6 +58,7 @@ class SudokuGame {
     }
 
     fun changeNoteTakingState(){
-        
+        isTakingNotes = !isTakingNotes
+        isTakingNotesLiveData.postValue(isTakingNotes)
     }
 }
