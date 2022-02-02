@@ -66,5 +66,6 @@ class SudokuGame {
         }else{
             setOf<Int>()
         }
+        highlightedKeysLiveData.postValue(curNotes)
     }
 }
